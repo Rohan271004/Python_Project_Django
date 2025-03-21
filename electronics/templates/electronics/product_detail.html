@@ -14,6 +14,8 @@
         flex-direction: column;
         align-items: center;
       }
+
+      /* Header */
       .header {
         background-color: #264653;
         color: white;
@@ -24,15 +26,17 @@
         font-weight: bold;
         animation: fadeInDown 1s ease-in-out;
       }
+
+      /* Navbar */
       .navbar {
         width: 100%;
         background-color: #2a9d8f;
-        overflow: hidden;
         display: flex;
         justify-content: center;
         padding: 10px 0;
         animation: fadeInDown 1s ease-in-out;
       }
+
       .navbar a {
         color: white;
         text-decoration: none;
@@ -40,10 +44,13 @@
         font-size: 18px;
         transition: background 0.3s;
       }
+
       .navbar a:hover {
         background-color: #1f776e;
         border-radius: 5px;
       }
+
+      /* Footer */
       .footer {
         background-color: #4682b4;
         color: white;
@@ -54,6 +61,8 @@
         margin-top: 20px;
         animation: fadeInUp 1s ease-in-out;
       }
+
+      /* Product container */
       .product-container {
         display: flex;
         flex-wrap: wrap;
@@ -62,89 +71,100 @@
         padding: 20px;
         animation: fadeIn 1s ease-in-out;
       }
+
       .product-card {
         background: #f0f8ff;
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        width: 300px;
+        width: 280px;
         text-align: center;
         transition: transform 0.3s ease-in-out;
         animation: fadeInUp 1s ease-in-out;
       }
+
       .product-card:hover {
         transform: scale(1.05);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
       }
+
       .product-name {
         font-size: 18px;
         font-weight: bold;
         color: #333;
       }
+
       .product-price {
         font-size: 16px;
         color: #006400;
         margin: 10px 0;
       }
+
       .product-description {
         font-size: 14px;
         color: #555;
         margin-bottom: 10px;
       }
+
+      /* Buttons */
       .button-container {
         display: flex;
-        justify-content: center;
-        gap: 10px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
       }
+      .button-container button {
+        flex: 1;
+        min-width: 120px; 
+        padding: 10px; 
+        font-size: 16px; 
+        text-align: center;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+
       .buy-button,
-      .cart-button {
+      .cart-button,
+      .update-button,
+      .delete-button {
         background-color: #4682b4;
         color: white;
         border: none;
         padding: 10px 15px;
-        border-radius: 5px;
+        border-radius: 8px;
         cursor: pointer;
         font-size: 14px;
-        transition: background-color 0.3s;
+        width: 110px;
+        transition: background-color 0.3s, transform 0.2s;
       }
+
       .cart-button {
         background-color: #5f9ea0;
       }
-      .buy-button:hover {
-        background-color: #4169e1;
-      }
-      .cart-button:hover {
-        background-color: #20b2aa;
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-      @keyframes fadeInDown {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+
+      .delete-button {
+        background-color: #c0392b;
       }
 
+      .update-button:hover,
+      .buy-button:hover {
+        background-color: #4169e1;
+        transform: scale(1.05);
+      }
+
+      .cart-button:hover {
+        background-color: #20b2aa;
+        transform: scale(1.05);
+      }
+
+      .delete-button:hover {
+        background-color: #a93226;
+        transform: scale(1.05);
+      }
+
+      /* Form Styling */
       .form-container {
         background: #f0f8ff;
         padding: 20px;
@@ -155,30 +175,37 @@
         margin-top: 20px;
         animation: fadeInUp 1s ease-in-out;
         border: 2px solid #2a9d8f;
-    }
-    .form-title {
+      }
+
+      .form-title {
         font-size: 20px;
         font-weight: bold;
         color: #264653;
         margin-bottom: 15px;
-    }
-    .styled-form {
+      }
+
+      .styled-form {
         display: flex;
         flex-direction: column;
         gap: 12px;
-    }
-    .styled-form input, .styled-form textarea, .styled-form select {
+      }
+
+      .styled-form input,
+      .styled-form textarea,
+      .styled-form select {
         width: 100%;
         padding: 12px;
         border: 2px solid #2a9d8f;
         border-radius: 10px;
         font-size: 16px;
-    }
-    .styled-form textarea {
+      }
+
+      .styled-form textarea {
         height: 100px;
         resize: vertical;
-    }
-    .submit-button {
+      }
+
+      .submit-button {
         background-color: #4682b4;
         color: white;
         border: none;
@@ -187,10 +214,43 @@
         cursor: pointer;
         font-size: 16px;
         transition: background-color 0.3s;
-    }
-    .submit-button:hover {
+      }
+
+      .submit-button:hover {
         background-color: #4169e1;
-    }
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     </style>
   </head>
   <body>
@@ -207,18 +267,25 @@
         <div class="product-name">{{ pro.name }}</div>
         <div class="product-price">₹{{ pro.price }}</div>
         <div class="product-description">{{ pro.description }}</div>
+
         <div class="button-container">
+          <a href="{% url 'update_product' pro.id %}"
+            ><button type="button" class="update-button">Button</button></a
+          >
+          <a href="{% url 'delete_product' pro.id %}"
+            ><button type="button" class="delete-button">Delete</button></a
+          >
           <button class="buy-button">Buy Now</button>
           <button class="cart-button">Add to Cart</button>
         </div>
       </div>
+
       {% endfor %}
     </div>
 
     <div class="form-container">
-      <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %} {{ form.as_p }}
         <button type="submit" class="submit-button">Add to Cart</button>
       </form>
     </div>
